@@ -128,6 +128,7 @@ Reduces memory contention in multi-CPU systems:
 - CPUs connected by a shared system interconnect
 - Single address space for all CPU. The memory access time depends on the memory location relative to the processor.
 - Under NUMA, a processor can access its own local memory faster than non-local memory (memory local to another processor or memory shared between processors).
+
 ![architecture](./images/1_4.png)
 
 **Advantages:**
@@ -276,14 +277,14 @@ This makes it possible for:
 - More complex scheduling algorithms are required.
 
 ### The management of multiprogramming and multitasking requires:
- • A way to manage the memory when multiple processes use it
- • A way to choose which process runs next (called CPU scheduling)
- • A way to limit how a process can affect others
- • A higher level way to see memory (logical memory)
- • A file system with its corresponding storage management
- • A way to protect resources from inappropriate use
- • A way to allow processes to communicate with each other and transfer information
- • A way to enable execution synchronization to try to avoid that process are forever waiting for one another (deadlock)
+- A way to manage the memory when multiple processes use it
+- A way to choose which process runs next (called CPU scheduling)
+- A way to limit how a process can affect others
+- A higher level way to see memory (logical memory)
+- A file system with its corresponding storage management
+- A way to protect resources from inappropriate use
+- A way to allow processes to communicate with each other and transfer information
+- A way to enable execution synchronization to try to avoid that process are forever waiting for one another (deadlock)
 
 # 6. Dual-Mode & Multimode Operation
 
@@ -305,7 +306,7 @@ A timer makes sure the CPU doesn’t get stuck running one program forever — i
 
 ### Why Do We Need Timers?
 
-**Without a timer:***
+**Without a timer:**
 
 Once the OS gives CPU control to a user process, that process could run indefinitely, possibly hanging the system.
 
@@ -368,23 +369,23 @@ Manages and coordinates system resources:
 
 ## 8.1. Process Management
 The OS is responsible for the following activities in connection with process management
-– Creating and deleting both user and system processes
-– Suspending and resuming processes
-– Providing mechanisms for process synchronization
-– Providing mechanisms for process communication
-– Providing mechanisms for deadlock hand
+- Creating and deleting both user and system processes
+- Suspending and resuming processes
+- Providing mechanisms for process synchronization
+- Providing mechanisms for process communication
+- Providing mechanisms for deadlock hand
 
 # 9. Security and Protection
 
-**Protection:** Controls access of users/processes to resources.
+1. **Protection:** Controls access of users/processes to resources.
 
 - Prevent misuse (e.g., deleting all files with rm -r ./*).
 
-**Security:** Safeguards system from internal/external threats.
+2. **Security:** Safeguards system from internal/external threats.
 
 - Examples: Viruses, DoS attacks.
 
-**User Management:**
+3. **User Management:**
 
 - UID/GID: Identify users and groups.
 
