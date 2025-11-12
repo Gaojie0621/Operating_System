@@ -125,9 +125,9 @@ The system still has a single address space, so the OS and programs can access a
 NUMA attempts to address the contention problem by providing separate memory for each processor, avoiding the performance hit when several processors attempt to address the same memory.
 
 Reduces memory contention in multi-CPU systems:
-    - CPUs connected by a shared system interconnect
-    - Single address space for all CPU. The memory access time depends on the memory location relative to the processor.
-    - Under NUMA, a processor can access its own local memory faster than non-local memory (memory local to another processor or memory shared between processors).
+- CPUs connected by a shared system interconnect
+- Single address space for all CPU. The memory access time depends on the memory location relative to the processor.
+- Under NUMA, a processor can access its own local memory faster than non-local memory (memory local to another processor or memory shared between processors).
 ![architecture](./images/1_4.png)
 
 **Advantages:**
