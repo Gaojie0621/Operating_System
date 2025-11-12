@@ -379,15 +379,15 @@ The OS is responsible for the following activities in connection with process ma
 
 1. **Protection:** Controls access of users/processes to resources.
 
-- Prevent misuse (e.g., deleting all files with rm -r ./*).
+    - Prevent misuse (e.g., deleting all files with rm -r ./*).
 
 2. **Security:** Safeguards system from internal/external threats.
 
-- Examples: Viruses, DoS attacks.
+    - Examples: Viruses, DoS attacks.
 
 3. **User Management:**
 
-- UID/GID: Identify users and groups.
+    - UID/GID: Identify users and groups.
 
-- Processes can escalate privileges using effective UIDs (e.g., passwd).
+    - Processes can escalate privileges using effective UIDs (e.g., passwd).
 
