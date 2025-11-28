@@ -12,6 +12,11 @@ It **owns**
 - Register set
 - Stack
 
+![](./images/3_10.png)
+![](./images/3_11.png)
+
+Note that **a thread is not a function** : Any code that the thread executes is in the Text section of the Memory layout of the process. **The thread doesn't contain code, it points to the code through it's program counter.** This means multiple threads can point to the exact same executable code.
+
 #### Why does this matter?
 
 It allows multiple independent paths of execution inside the same process.
@@ -51,7 +56,7 @@ The UI remains active even if part of the program is blocked (I/O, long tasks).
 
 #### 2. Resource Sharing
 
-Threads share the same data section → no need for shared memory setup.
+Threads share the same data section → no need for shared memory setup. Which is more efficient than IPC(Inter Process Communication).
 
 But this also introduces risks: race conditions, inconsistent data.
 
@@ -68,6 +73,9 @@ It is:
 #### 4. Scalability
 take advantage of multiprocessor/multicore architecture.
 Threads allow programs to use multiple CPU cores concurrently.
+
+#### 5. Lower overhead than processes
+Thread creation & switching is faster than process creation.
 
 # 3. Multicore Programming
 ## 3.1. What is Multicore?
@@ -117,7 +125,7 @@ Many bugs only appear under rare timing conditions → hard to reproduce.
 ## 3.3. Types of parallelism
 ### 3.3.1. Data Parallelism
 
-Same operation on different chunks of data.
+Same operation on different chunks of data. Distributing subsets of the same data across multiple computing cores and performing the same operation on each core.
 
 **Example:**
 
@@ -136,7 +144,9 @@ Same operation on different chunks of data.
 
 ### 3.3.2 Task Parallelism
 
-Different tasks run simultaneously
+Different tasks run simultaneously. Distributing not data but tasks(or threads) across multiple computing cores.
+- Different threads may be operating on the same data.
+- Different threads may be operating on different data.
 
 **Example:**
 
