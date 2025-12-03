@@ -73,16 +73,16 @@ The critical-section problem is:
 
 A correct solution must satisfy three essential properties:
 
-## 1. Mutual Exclusion
+**1. Mutual Exclusion**
 
 If one process is in its critical section, no other process may enter its critical section.
 
-## 2. Progress
+**2. Progress**
 
 If no one is in the critical section and someone wants to enter, the system must allow progress.
 Indefinite postponement is not allowed.
 
-## 3. Bounded Waiting
+**3. Bounded Waiting**
 
 After a process requests entry, there must be a limit on how many others can enter before it.
 
@@ -111,7 +111,7 @@ If a process calls `acquire()` when unavailable, it must wait.
 **Note**: The code for acquisition or release of a lock must be atomic.
 - They can be implemented using the compare_and_swap() for example.
 
-## Spinlocks
+### Spinlocks
 
 mutexes implemented with `compare_and_swap()` or `test_and_set()` cause **busy waiting**, meaning:
 
@@ -133,11 +133,11 @@ Semaphores generalize mutexes:
 
 ## Types:
 
-### 1. Binary semaphore
+**1. Binary semaphore**
 
 Like a mutex (0/1)
 
-### 2. Counting semaphore
+**2. Counting semaphore**
 
 Value initialized to number of resources
 
@@ -147,7 +147,7 @@ Value initialized to number of resources
 
 - `signal()` — increment; wakes a waiting process
 
-## Better than spinlocks:
+### Better than spinlocks:
 
 Semaphores can avoid busy waiting by:
 
@@ -180,7 +180,7 @@ Thus the highest priority process is blocked by lower ones — a serious livenes
 ## 6.1 Bounded-Buffer Problem (Producer–Consumer)
 ### Goal
 
-Producers place items into a fixed-size circular buffer (capacity N). Consumers remove items. We must:
+**Producers** place items into a fixed-size circular buffer (capacity N). **Consumers** remove items. We must:
 
 - Prevent producers overwriting full buffer
 
